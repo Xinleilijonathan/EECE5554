@@ -1,0 +1,4 @@
+My Northeastern username is: li.xinle
+My GitHub username is: Xinleilijonathan
+I have successfully installed Ubuntu 24.04 LTS.
+I am ready to use Git and GitHub for EECE5554.
