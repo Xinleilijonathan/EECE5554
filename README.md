@@ -5,14 +5,16 @@ Each lab is stored in its own folder and includes code, screenshots, and a READM
 
 ## Repository Structure
 
+```text
 EECE5554
 ├── lab1
-│ ├── LASTNAME_turtle.png
-│ ├── NortheasternUsername.txt
-│ ├── README.md
-│ └── src
-│ ├── listener.py
-│ └── talker.py
+│   ├── LASTNAME_turtle.png
+│   ├── NortheasternUsername.txt
+│   ├── README.md
+│   └── src
+│       ├── listener.py
+│       └── talker.py
+
 
 
 ## Lab Descriptions
