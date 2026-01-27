@@ -1,4 +1,3 @@
-# EECE5554
 # EECE 5554 – Robotics Sensing and Navigation Labs
 
 This repository contains all lab assignments for EECE 5554.  
