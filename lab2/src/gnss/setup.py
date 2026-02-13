@@ -26,7 +26,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-	    'gnss_driver = gnss_driver.gnss_driver_node:main',
+	    'gnss_node = gnss.gnss_node:main',
         ],
     },
 )
