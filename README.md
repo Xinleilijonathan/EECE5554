@@ -29,7 +29,7 @@ EECE5554
 │           │   ├── __init__.py
 │           │   └── gnss_node.py
 │           ├── launch
-│           │   └── example_launch.py
+│           │   └── standalone_driver.launch.py
 │           ├── package.xml
 │           ├── resource
 │           ├── setup.cfg
