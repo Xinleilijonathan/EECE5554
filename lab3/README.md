@@ -36,6 +36,8 @@ Performance metrics include:
 
 # Repository Structure
 
+---
+
 lab3
 ├── analysis # Python scripts for GNSS data analysis
 │ ├── Xinlei_analysis_script.py
@@ -176,3 +178,4 @@ Author
 Xinlei Li
 MS Electrical and Computer Engineering
 Northeastern University
+
