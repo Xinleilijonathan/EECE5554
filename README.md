@@ -131,6 +131,99 @@ These metrics help quantify GNSS reliability for robotic navigation tasks.
 
 ---
 
+## Lab 3 – RTK GNSS Driver and Precision Positioning Analysis
+
+The objective of this lab was to implement and evaluate a **Real-Time Kinematic (RTK) GNSS driver** in ROS2 and analyze the improvement in positioning accuracy compared with standalone GNSS.
+
+RTK GNSS uses differential corrections from a reference station to significantly improve localization accuracy, enabling centimeter-level positioning under favorable conditions.
+
+---
+
+### Key Learning Objectives
+
+* Implement a ROS2 driver for parsing RTK GNSS NMEA messages
+* Extract positioning information from **GNGGA sentences**
+* Convert latitude/longitude measurements into **UTM coordinates**
+* Evaluate positioning accuracy using statistical metrics
+* Compare **Standalone GNSS vs RTK GNSS performance**
+* Analyze positioning stability in both open and occluded environments
+
+---
+
+### Implemented Components
+
+#### RTK GNSS ROS2 Driver
+
+A ROS2 Python package named **`gnss_rtk`** was developed to interface with the RTK GNSS receiver.
+
+The driver:
+
+* Reads NMEA data from a serial interface
+* Parses **GNGGA messages**
+* Extracts the following fields:
+
+  * UTC timestamp
+  * Latitude / Longitude
+  * Altitude
+  * Fix quality
+  * Number of satellites
+  * HDOP
+
+The parsed data can then be published as ROS messages for downstream robotics applications.
+
+---
+
+#### Data Collection
+
+Three datasets were collected for analysis:
+
+* **Open-sky stationary measurements** — minimal satellite obstruction
+* **Occluded stationary measurements** — reduced satellite visibility and multipath effects
+* **Walking trajectory dataset** — used to evaluate trajectory accuracy
+
+These datasets were processed to evaluate GNSS accuracy under different environmental conditions.
+
+---
+
+#### Data Analysis
+
+Custom Python analysis scripts were used to generate quantitative evaluation metrics and visualization plots.
+
+The analysis includes:
+
+* Stationary **Northing vs Easting scatter plots**
+* **Horizontal error histograms**
+* **Altitude stability analysis**
+* **Walking trajectory evaluation**
+* **Line-fit trajectory error estimation**
+* **RMSE comparison between standalone GNSS and RTK GNSS**
+
+---
+
+### Results Summary
+
+The results demonstrate the significant improvement provided by RTK corrections.
+
+Key observations include:
+
+* **Open-sky RTK positioning achieved sub-meter accuracy**
+* **Occluded environments produced larger error due to multipath and satellite blockage**
+* **RTK GNSS significantly outperformed standalone GNSS in all evaluated scenarios**
+* Walking trajectory analysis showed that RTK maintained a highly linear path with minimal lateral deviation.
+
+These results confirm the benefits of RTK GNSS for robotics navigation tasks requiring high positional accuracy.
+
+---
+
+### Technical Skills Demonstrated
+
+* ROS2 driver development
+* NMEA GNSS message parsing
+* Coordinate system transformation (Latitude/Longitude → UTM)
+* Statistical error analysis
+* Visualization of positioning datasets
+* Performance comparison between GNSS localization methods
+
 # Notes
 
 This repository is structured to follow recommended ROS2 workspace practices and academic submission guidelines.
