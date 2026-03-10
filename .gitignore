@@ -1,12 +1,9 @@
-# ROS2
 build/
 install/
 log/
-
-# virtual env
-gnss_env/
-
-# python
 __pycache__/
 *.pyc
-
+.vscode/
+.DS_Store
+lab3/data/*
+*.db3
