@@ -39,23 +39,25 @@ Performance metrics include:
 ---
 ```
 lab3
-├── analysis # Python scripts for GNSS data analysis
+├── analysis 
 │ ├── Xinlei_analysis_script.py
-│ ├── q2_stationary_xy_rel_open_occluded.png
-│ ├── RTK_histogram.png
-│ ├── RTK_altitude.png
-│ ├── RTK_walking_NE.png
-│ └── trajectory_utm_overlay.png
-│
-├── data # rosbag datasets used for testing
-│
+├── data 
+│ ├── occludedRTK.txt
+│ ├── openRTK.txt
+│ ├── walkingRTK.txt
 ├── src
-│ └── gnss_rtk # ROS2 package implementing RTK GNSS driver
-│ ├── launch
-│ ├── msg
-│ ├── scripts
-│ └── package.xml
-│
+│     ├── gnss_rtk
+│     │   ├── gnss_rtk
+│     │   │   ├── __init__.py
+│     │   │   └── rtk_driver.py
+│     │   ├── launch
+│     │   │   └── rtk_driver_launch.py
+│     │   ├── package.xml
+│     │   ├── resource
+│     │   │   └── gnss_rtk
+│     │   ├── setup.cfg
+│     │   └── setup.py
+│     └── README.md
 └── README.md
 ```
 ---
@@ -178,5 +180,6 @@ Author
 Xinlei Li
 MS Electrical and Computer Engineering
 Northeastern University
+
 
 
