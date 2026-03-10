@@ -25,7 +25,27 @@ EECE5554
 │   ├── README.md
 │   └── src
 │       └── gnss
-│           ├── gnss
+│           ├── gnsslab3
+├── analysis 
+│ ├── Xinlei_analysis_script.py
+├── data 
+│ ├── occludedRTK.txt
+│ ├── openRTK.txt
+│ ├── walkingRTK.txt
+├── src
+│     ├── gnss_rtk
+│     │   ├── gnss_rtk
+│     │   │   ├── __init__.py
+│     │   │   └── rtk_driver.py
+│     │   ├── launch
+│     │   │   └── rtk_driver_launch.py
+│     │   ├── package.xml
+│     │   ├── resource
+│     │   │   └── gnss_rtk
+│     │   ├── setup.cfg
+│     │   └── setup.py
+│     └── README.md
+└── README.md
 │           │   ├── __init__.py
 │           │   └── gnss_node.py
 │           ├── launch
@@ -34,6 +54,27 @@ EECE5554
 │           ├── resource
 │           ├── setup.cfg
 │           └── setup.py
+├── lab3
+│   ├── analysis 
+│   │   ├── Xinlei_analysis_script.py
+│   ├── data 
+│   │   ├── occludedRTK.txt
+│   │   ├── openRTK.txt
+│   │   ├── walkingRTK.txt
+│   ├── src
+│   │   ├── gnss_rtk
+│   │   │   ├── gnss_rtk
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── rtk_driver.py
+│   │   │   ├── launch
+│   │   │   │   └── rtk_driver_launch.py
+│   │   │   ├── package.xml
+│   │   │   ├── resource
+│   │   │   │   └── gnss_rtk
+│   │   │   ├── setup.cfg
+│   │   │   └── setup.py
+│   │   └── README.md
+└── README.md
 ```
 
 **Note:** Build artifacts (`build/`, `install/`, `log/`) and rosbag files are excluded using `.gitignore`.
