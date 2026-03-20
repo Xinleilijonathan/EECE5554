@@ -25,35 +25,7 @@ EECE5554
 │   ├── README.md
 │   └── src
 │       └── gnss
-│           ├── gnsslab3
-├── analysis 
-│ ├── Xinlei_analysis_script.py
-├── data 
-│ ├── occludedRTK.txt
-│ ├── openRTK.txt
-│ ├── walkingRTK.txt
-├── src
-│     ├── gnss_rtk
-│     │   ├── gnss_rtk
-│     │   │   ├── __init__.py
-│     │   │   └── rtk_driver.py
-│     │   ├── launch
-│     │   │   └── rtk_driver_launch.py
-│     │   ├── package.xml
-│     │   ├── resource
-│     │   │   └── gnss_rtk
-│     │   ├── setup.cfg
-│     │   └── setup.py
-│     └── README.md
-└── README.md
-│           │   ├── __init__.py
-│           │   └── gnss_node.py
-│           ├── launch
-│           │   └── standalone_driver.launch.py
-│           ├── package.xml
-│           ├── resource
-│           ├── setup.cfg
-│           └── setup.py
+│
 ├── lab3
 │   ├── analysis 
 │   │   ├── Xinlei_analysis_script.py
@@ -62,18 +34,29 @@ EECE5554
 │   │   ├── openRTK.txt
 │   │   ├── walkingRTK.txt
 │   ├── src
-│   │   ├── gnss_rtk
-│   │   │   ├── gnss_rtk
-│   │   │   │   ├── __init__.py
-│   │   │   │   └── rtk_driver.py
-│   │   │   ├── launch
-│   │   │   │   └── rtk_driver_launch.py
-│   │   │   ├── package.xml
-│   │   │   ├── resource
-│   │   │   │   └── gnss_rtk
-│   │   │   ├── setup.cfg
-│   │   │   └── setup.py
-│   │   └── README.md
+│   │   └── gnss_rtk
+│   └── README.md
+│
+├── lab4
+│   ├── analysis
+│   │   └── analysis_script.py
+│   ├── data
+│   │   ├── stationary_5min      
+│   │   └── freeform_2min        
+│   ├── README.md
+│   └── src
+│       └── imu
+│           ├── imu
+│           │   ├── __init__.py
+│           │   └── example_node.py
+│           ├── launch
+│           │   └── example_launch.py
+│           ├── package.xml
+│           ├── resource
+│           │   └── imu
+│           ├── setup.cfg
+│           └── setup.py
+│
 └── README.md
 ```
 
@@ -264,6 +247,81 @@ These results confirm the benefits of RTK GNSS for robotics navigation tasks req
 * Statistical error analysis
 * Visualization of positioning datasets
 * Performance comparison between GNSS localization methods
+
+---
+
+## Lab 4 – IMU Data Analysis and Sensor Noise Characterization
+
+The objective of this lab was to analyze **Inertial Measurement Unit (IMU)** data and understand sensor noise characteristics and motion behavior.
+
+### Key Learning Objectives
+
+* Work with IMU data (gyroscope and accelerometer) in ROS2  
+* Record sensor data using rosbag2  
+* Analyze sensor noise using **Allan deviation**  
+* Estimate IMU noise parameters (ARW, bias instability)  
+* Perform orientation estimation (roll, pitch, yaw)  
+* Evaluate IMU behavior during dynamic motion  
+
+---
+
+### Implemented Components
+
+#### IMU ROS2 Package
+
+A ROS2 Python package named **`imu`** was developed to publish IMU measurements.
+
+The package includes:
+
+* IMU node (`example_node.py`)  
+* Launch file for running the node  
+* Standard ROS2 package structure  
+
+---
+
+#### Data Collection
+
+Two types of datasets were collected:
+
+* **Stationary data** — used for noise and Allan deviation analysis  
+* **Free-form motion data** — used to observe dynamic IMU behavior  
+
+---
+
+#### Data Analysis
+
+Custom Python scripts were developed to analyze IMU data.
+
+The analysis includes:
+
+* Gyroscope (ωx, ωy, ωz) visualization  
+* Accelerometer (ax, ay, az) visualization  
+* Orientation estimation (roll, pitch, yaw)  
+* Allan deviation computation  
+* Noise parameter estimation  
+
+---
+
+### Results Summary
+
+* Gyroscope signals show clear spikes during rotational motion  
+* Accelerometer captures both gravity and dynamic acceleration  
+* Orientation estimation is smooth but exhibits **drift over time**, especially in yaw  
+* Allan deviation analysis shows dominant **angle random walk (ARW)** behavior  
+* Bias instability and rate random walk are not clearly observable in the dataset  
+
+---
+
+### Technical Skills Demonstrated
+
+* IMU sensor data processing  
+* ROS2 sensor integration  
+* Time-series signal analysis  
+* Allan variance and noise modeling  
+* Orientation estimation from IMU data  
+* Data visualization and interpretation
+
+---
 
 # Notes
 
