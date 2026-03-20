@@ -53,7 +53,7 @@ class GNSSDriver(Node):
         super().__init__("gnss_driver")
 
         # Parameters
-        self.declare_parameter("port", "/dev/ttyUSB0")
+        self.declare_parameter("port", "/dev/ttyUSB1")
         self.declare_parameter("baud", 4800)
 
         port = self.get_parameter("port").get_parameter_value().string_value
