@@ -52,6 +52,7 @@ This lab investigates inertial odometry using IMU data collected from walking ex
 lab5/
 ├── analysis/
 │   ├── imu_analysis.py
+|   └── gps_analysis.py
 │   ├── report/
 │   │   ├── lab5_report.tex
 │   │   └── lab5_report.pdf
