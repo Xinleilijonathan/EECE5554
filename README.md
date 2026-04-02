@@ -8,6 +8,9 @@ Each lab is organized in its own directory and includes source code, analysis sc
 # Repository Structure
 
 ```
+# Repository Structure
+
+```
 EECE5554
 ├── lab1
 │   ├── LASTNAME_turtle.png
@@ -67,7 +70,51 @@ EECE5554
 │           ├── setup.cfg
 │           └── setup.py
 │
+├── lab5
+│   ├── analysis
+│   │   ├── imu_analysis.py
+|   |   └── gps_analysis.py
+│   │   └── report
+│   │       └── lab5_report.pdf
+│   ├── data
+│   │   ├── circle_walk_snapshot.png
+|   |   └── square_walk_snapshot.png
+│   │   └── circle/
+|   |   └── square/
+│   ├── src
+│   │   ├── gnss
+│   │   │   ├── gnss
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── gnss_node.py
+│   │   │   ├── launch
+│   │   │   │   └── standalone_driver.launch.py
+│   │   │   ├── resource
+│   │   │   │   └── gnss
+│   │   │   ├── test
+│   │   │   ├── package.xml
+│   │   │   ├── setup.cfg
+│   │   │   └── setup.py
+│   │   ├── imu
+│   │   │   ├── imu
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── driver.py
+│   │   │   │   └── example_node.py
+│   │   │   ├── launch
+│   │   │   │   └── driver.launch.py
+│   │   │   ├── resource
+│   │   │   │   └── imu
+│   │   │   ├── test
+│   │   │   ├── package.xml
+│   │   │   ├── setup.cfg
+│   │   │   └── setup.py
+│   │   └── README.md
+│   ├── README.md
+│
 └── README.md
+```
+
+**Note:** Build artifacts (`build/`, `install/`, `log/`) and rosbag files are excluded using `.gitignore`.
+
 ```
 
 **Note:** Build artifacts (`build/`, `install/`, `log/`) and rosbag files are excluded using `.gitignore`.
