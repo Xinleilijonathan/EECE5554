@@ -333,6 +333,94 @@ The analysis includes:
 
 ---
 
+## Lab 5 – Inertial Odometry Using IMU Data
+
+The objective of this lab was to implement and evaluate **inertial odometry** using IMU data collected during walking experiments. The goal was to understand how IMU measurements can be used to estimate motion and how integration errors affect trajectory reconstruction.
+
+---
+
+### Key Learning Objectives
+
+* Perform **magnetometer calibration** for heading estimation
+* Analyze **gyroscope data** and compute orientation via integration
+* Process **accelerometer data** to estimate velocity and displacement
+* Understand error accumulation in **single and double integration**
+* Reconstruct 2D trajectories using IMU data
+* Compare **magnetometer-based vs gyroscope-based heading estimation**
+
+---
+
+### Implemented Components
+
+#### IMU Data Analysis Pipeline
+
+A Python analysis script was developed to process rosbag IMU data and generate all required plots.
+
+The pipeline includes:
+
+* Magnetometer calibration (hard-iron offset correction)
+* Gyroscope integration for orientation estimation
+* Accelerometer integration for velocity and displacement
+* Heading estimation using:
+
+  * Magnetometer (`atan2`)
+  * Integrated gyroscope
+* North-East trajectory reconstruction
+
+---
+
+#### Data Collection
+
+Two datasets were collected:
+
+* **Circular walking trajectory**
+  Used to evaluate continuous motion and heading consistency
+
+* **Square walking trajectory**
+  Used to evaluate discrete turns and trajectory reconstruction accuracy
+
+---
+
+#### Data Analysis
+
+Custom Python scripts were used to generate the following plots:
+
+* Magnetometer calibration (before vs after)
+* Gyroscope angular velocity and integrated rotation
+* Heading comparison (magnetometer vs gyroscope)
+* Acceleration and velocity (all axes)
+* Displacement (double integration for additional analysis)
+* Reconstructed **North-East trajectory**
+
+---
+
+### Results Summary
+
+The results highlight the limitations of inertial odometry:
+
+* Reconstructed trajectories approximately follow expected shapes
+* Significant **drift** observed due to:
+
+  * Sensor noise
+  * Integration error accumulation
+* Double integration leads to rapid error growth in displacement
+* Magnetometer provides more stable heading compared to gyro integration
+
+Overall, the lab demonstrates that **IMU-only navigation is highly sensitive to noise and requires additional correction methods**.
+
+---
+
+### Technical Skills Demonstrated
+
+* IMU data processing and sensor fusion concepts
+* Numerical integration (single and double integration)
+* Heading estimation and coordinate transformation
+* Trajectory reconstruction in the N–E frame
+* Error analysis in inertial navigation systems
+* Data visualization using Matplotlib
+
+---
+
 # Notes
 
 This repository is structured to follow recommended ROS2 workspace practices and academic submission guidelines.
