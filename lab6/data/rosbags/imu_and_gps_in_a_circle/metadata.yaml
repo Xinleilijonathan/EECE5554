@@ -1,0 +1,66 @@
+rosbag2_bagfile_information:
+  version: 9
+  storage_identifier: mcap
+  duration:
+    nanoseconds: 574876999924
+  starting_time:
+    nanoseconds_since_epoch: 1775159436675145163
+  message_count: 23571
+  topics_with_message_count:
+    - topic_metadata:
+        name: /imu
+        type: vn_driver_msgs/msg/Vectornav
+        serialization_format: cdr
+        offered_qos_profiles:
+          - history: unknown
+            depth: 0
+            reliability: reliable
+            durability: volatile
+            deadline:
+              sec: 9223372036
+              nsec: 854775807
+            lifespan:
+              sec: 9223372036
+              nsec: 854775807
+            liveliness: automatic
+            liveliness_lease_duration:
+              sec: 9223372036
+              nsec: 854775807
+            avoid_ros_namespace_conventions: false
+        type_description_hash: RIHS01_55318153ab1e172764122545ad35787de36e7bf5ca89c001302fe406b821769f
+      message_count: 22996
+    - topic_metadata:
+        name: /gps
+        type: gnss/msg/Customgps
+        serialization_format: cdr
+        offered_qos_profiles:
+          - history: unknown
+            depth: 0
+            reliability: reliable
+            durability: volatile
+            deadline:
+              sec: 9223372036
+              nsec: 854775807
+            lifespan:
+              sec: 9223372036
+              nsec: 854775807
+            liveliness: automatic
+            liveliness_lease_duration:
+              sec: 9223372036
+              nsec: 854775807
+            avoid_ros_namespace_conventions: false
+        type_description_hash: RIHS01_00b85ee09a5d5601e5ca8c21abd77972bed3e781759534ee378136f9494faffc
+      message_count: 575
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - data_parking_lot_new_0.mcap
+  files:
+    - path: data_parking_lot_new_0.mcap
+      starting_time:
+        nanoseconds_since_epoch: 1775159436675145163
+      duration:
+        nanoseconds: 574876999924
+      message_count: 23571
+  custom_data: ~
+  ros_distro: jazzy
