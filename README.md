@@ -10,7 +10,6 @@ Each lab is organized in its own directory and includes source code, analysis sc
 ```
 # Repository Structure
 
-```
 EECE5554
 ├── lab1
 │   ├── LASTNAME_turtle.png
