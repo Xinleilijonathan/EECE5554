@@ -8,8 +8,16 @@ Each lab is organized in its own directory and includes source code, analysis sc
 # Repository Structure
 
 ```
+# EECE 5554 – Robotics Sensing and Navigation Labs
+
+This repository contains all lab assignments completed for **EECE 5554 – Robotics Sensing and Navigation**.
+Each lab is organized in its own directory and includes source code, analysis scripts, generated results, and a README describing the work performed.
+
+---
+
 # Repository Structure
 
+```text
 EECE5554
 ├── lab1
 │   ├── LASTNAME_turtle.png
@@ -23,7 +31,9 @@ EECE5554
 │   ├── analysis
 │   │   └── analyze_gnss_bags.py
 │   ├── data
-│   │   └── your_rosbags   (not tracked in Git)
+│   │   └── 200m_walking
+|   |   ├── occulded_aera_5min
+|   |   ├── open_aera_5min
 │   ├── README.md
 │   └── src
 │       └── gnss
@@ -72,14 +82,14 @@ EECE5554
 ├── lab5
 │   ├── analysis
 │   │   ├── imu_analysis.py
-|   |   └── gps_analysis.py
+│   │   ├── gps_analysis.py
 │   │   └── report
 │   │       └── lab5_report.pdf
 │   ├── data
 │   │   ├── circle_walk_snapshot.png
-|   |   └── square_walk_snapshot.png
-│   │   └── circle/
-|   |   └── square/
+│   │   ├── square_walk_snapshot.png
+│   │   ├── circle/
+│   │   └── square/
 │   ├── src
 │   │   ├── gnss
 │   │   │   ├── gnss
@@ -108,6 +118,26 @@ EECE5554
 │   │   │   └── setup.py
 │   │   └── README.md
 │   ├── README.md
+│
+├── lab6
+│   ├── analysis
+│   │   ├── report.pdf                         # Compiled PDF report
+│   │   └── lab6_analysis.py                   # Main analysis script (all figures + stats)
+│   ├── data
+│   │   ├── rosbags                            # Place rosbag recordings here
+│   │   │   ├── imu_and_gps_in_a_circle/       # Calibration dataset (circles – IMU + GPS)
+│   │   │   ├── Around_the_city_imu_and_gps/   # City driving dataset (IMU + GPS)
+│   │   │   ├── vehicle_drive_in_circle/
+│   │   │   └── vehicle_drive_in_city/
+│   │   └── snapshots                          # Place video snapshots here
+│   │       └── snapshot_of_video.png
+│   ├── src
+│   │   ├── gnss/                              # ROS 2 GPS puck driver package
+│   │   ├── imu/                               # ROS 2 VectorNav VN-100 driver package
+│   │   ├── imu_msgs/                          # Custom VectorNav message definition
+│   │   └── launch
+│   │       └── lab6_launch.py                 # Unified IMU + GPS launch file
+│   └── README.md
 │
 └── README.md
 ```
@@ -465,6 +495,88 @@ Overall, the lab demonstrates that **IMU-only navigation is highly sensitive to 
 * Data visualization using Matplotlib
 
 ---
+
+## Lab 6 – Vehicle-Based Multisensor Navigation Analysis
+
+The objective of this lab was to collect and analyze **real-world vehicle navigation data** using IMU and GPS sensors. The goal was to understand how these sensors behave in controlled and urban driving environments, and to evaluate trajectory consistency and motion characteristics.
+
+---
+
+### Key Learning Objectives
+
+* Integrate **IMU and GPS drivers** in ROS2  
+* Record multisensor data using rosbag2  
+* Analyze **vehicle motion and trajectory**  
+* Compare **circular vs real-world driving behavior**  
+* Evaluate heading and motion consistency  
+* Generate structured plots for robotics analysis  
+
+---
+
+### Implemented Components
+
+#### ROS2 Sensor Integration
+
+The system includes the following components:
+
+* IMU driver (VectorNav VN-100)  
+* GPS driver (GNSS puck)  
+* Unified ROS2 launch file (`lab6_launch.py`)  
+* Custom message definitions (`imu_msgs`)  
+
+---
+
+#### Data Collection
+
+Four datasets were collected:
+
+* **Circular driving dataset (IMU + GPS)**  
+  Used to evaluate controlled motion and trajectory consistency  
+
+* **City driving dataset (IMU + GPS)**  
+  Used to evaluate real-world navigation performance  
+
+* **Vehicle circle trajectory**  
+  Used to analyze turning behavior and repeatability  
+
+* **Vehicle city trajectory**  
+  Used to observe sensor performance under real conditions  
+
+---
+
+### Data Analysis
+
+Custom Python scripts were used to generate the following plots:
+
+* GPS trajectory (latitude / longitude → path)  
+* IMU angular velocity (ωx, ωy, ωz)  
+* IMU acceleration (ax, ay, az)  
+* Heading / yaw estimation over time  
+* Velocity and motion consistency analysis  
+* Comparison between circular and city trajectories  
+
+---
+
+### Results Summary
+
+The results demonstrate the differences between controlled and real-world driving:
+
+* Circular trajectories show relatively smooth and consistent motion  
+* City driving introduces **noise, variability, and irregular motion**  
+* IMU signals clearly reflect turning and acceleration events  
+* GPS trajectories are accurate but affected by environmental factors  
+* Sensor fusion is necessary for robust vehicle navigation  
+
+---
+
+### Technical Skills Demonstrated
+
+* ROS2 multisensor integration  
+* Real-world data collection using rosbag2  
+* IMU and GPS data analysis  
+* Time-series and trajectory visualization  
+* Interpretation of vehicle motion behavior  
+* Structured robotics experiment design  
 
 # Notes
 
