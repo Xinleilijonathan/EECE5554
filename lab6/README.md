@@ -11,43 +11,22 @@ This lab implements multi-sensor navigation to determine the path of a moving ca
 ```
 lab6/
 ├── analysis/
-│   ├── figures/                      # Generated plots (Figs 0–10, Q5 bonus)
-│   │   ├── fig0_mag_scatter.png      # Magnetometer calibration before/after
-│   │   ├── fig1_mag_yaw.png          # Magnetometer yaw before/after calibration
-│   │   ├── fig2_gyro_yaw.png         # Gyro-integrated yaw estimate
-│   │   ├── fig3_complementary_filter.png  # 4-subplot complementary filter
-│   │   ├── fig4_velocity_accel.png   # Forward velocity from accelerometer
-│   │   ├── fig5_velocity_gps.png     # Forward velocity from GPS
-│   │   ├── fig6_trajectory.png       # GPS vs. IMU dead-reckoning trajectory
-│   │   ├── fig7_lidar_snapshot_1.png # LiDAR point cloud frame 1
-│   │   ├── fig7_lidar_snapshot_2.png # LiDAR point cloud frame 2
-│   │   ├── fig8_compare_all.png      # LiDAR odometry + GPS + IMU overlay
-│   │   ├── fig9_camera_snapshots.png # 4 representative camera frames
-│   │   ├── fig10_radar_na.png        # Radar N/A placeholder
-│   │   └── fig_q5_centripetal.png    # Q5 centripetal acceleration comparison
-│   ├── report/
-│   │   ├── report.tex                # LaTeX report source
-│   │   └── report.pdf                # Compiled PDF report
-│   └── scripts/
+│       └── report.pdf                # Compiled PDF report
 │       ├── lab6_analysis.py          # Main analysis script (all figures + stats)
-│       └── inspect_bag.py            # Rosbag topic inspection utility
 ├── data/
 │   ├── rosbags/                      # Place rosbag recordings here
+|       ├──imu_and_gps_in_a_circle/          # Calibration dataset (circles — IMU + GPS)
+|       ├──Around_the_city_imu_and_gps/      # City driving dataset (IMU + GPS)
+|       ├──vehicle_drive_in_circle
+|       ├──vehicle_drive_in_city
 │   └── snapshots/                    # Place video snapshots here
-├── imu_and_gps_in_a_circle/          # Calibration dataset (circles — IMU + GPS)
-│   ├── data_parking_lot_new_0.mcap
-│   └── metadata.yaml
-├── Around_the_city_imu_and_gps/      # City driving dataset (IMU + GPS)
-│   ├── oon_the_way_0.mcap
-│   └── metadata.yaml
+|       ├── snapshot_of_video.png
 ├── src/
 │   ├── gnss/                         # ROS 2 GPS puck driver package
 │   ├── imu/                          # ROS 2 VectorNav VN-100 driver package
 │   ├── imu_msgs/                     # Custom Vectornav message definition
 │   └── launch/
 │       └── lab6_launch.py            # Unified IMU + GPS launch file
-├── Lab6-Nuance.ipynb                 # Lab specification and rubric
-├── Lab6_complementary_filter.ipynb   # Reference: Butterworth filter examples
 └── README.md
 ```
 
