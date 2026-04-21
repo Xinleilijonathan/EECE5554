@@ -114,7 +114,6 @@ EECE5554
 
 **Note:** Build artifacts (`build/`, `install/`, `log/`) and rosbag files are excluded using `.gitignore`.
 
-```
 
 **Note:** Build artifacts (`build/`, `install/`, `log/`) and rosbag files are excluded using `.gitignore`.
 
